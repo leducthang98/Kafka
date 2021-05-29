@@ -1,7 +1,7 @@
 # kafka-topics.sh --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic topic1   ---> create topic
 # kafka-topics.sh --list --zookeeper zookeeper:2181   ---> list topics
 # kafka-console-producer.sh --broker-list kafka:9092 --topic topic1 --> create producer 
-# kafka-console-consumer.sh --bootstrap-server kafka:9092 --topic topic1 --from-beginning
+# kafka-console-consumer.sh --bootstrap-server kafka:9092 --topic topic1 --from-beginning --> create consumer
 
 
 # -- about consumer & partition -- CAN n CONSUMER subcribe 1 PARTITION?
@@ -22,3 +22,5 @@
   # partition > consumer => 1 consumer đọc nhiều partition
   # partition < consumer => có consumer rảnh rỗi
   # partition = consumer => 1 consumer đọc 1 partition
+
+# 1 consumer khi đọc msg mà không commit, thì msg đó vẫn sẽ bị đọc lại khi consumer/group consumer đó access lại. Nếu commit rồi thì không đọc lại msg đó nữa.
