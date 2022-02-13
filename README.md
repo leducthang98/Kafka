@@ -24,3 +24,6 @@
   # partition = consumer => 1 consumer đọc 1 partition
 
 # 1 consumer khi đọc msg mà không commit, thì msg đó vẫn sẽ bị đọc lại khi consumer/group consumer đó access lại. Nếu commit rồi thì không đọc lại msg đó nữa.
+
+# sum-up: many consumer with same group id => share msgs and partitions 
+#         1 consumer can read n partitions
